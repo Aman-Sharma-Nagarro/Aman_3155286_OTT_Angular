@@ -1,0 +1,12 @@
+name: Deploying to GCP
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Node Dependencies
+        run:  cd OTTAngular && npm i
+      - name: Build
+        run:  npm build
+      - name: Deploy to GCP
+        run:  ng deploy
