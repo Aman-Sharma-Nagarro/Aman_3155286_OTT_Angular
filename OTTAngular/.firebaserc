@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ottangular-2e619": {
+      "hosting": {
+        "OTTAngular": [
+          "ottangular-2e619"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ottangular-2e619"
+  }
+}
