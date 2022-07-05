@@ -1,1 +1,100 @@
-<p>email-based-login works!</p>
+<mat-card>
+
+    <div *ngIf="isSignupType">
+        <h3>Create New Account</h3>
+
+        <button mat-stroked-button (click)="changeTypeOfForm('login')">
+            Existing User?
+        </button>
+    </div>
+
+    <div *ngIf="isLoginType">
+        <h3>Sign In</h3>
+        
+        <button size="small" mat-stroked-button (click)="changeTypeOfForm('signup')">
+            New User?
+        </button>
+    </div>
+
+    <div *ngIf="isResetType">
+        <h3>Reset Password</h3>
+        <button size="small" mat-button (click)="changeTypeOfForm('login')">Back</button>
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <mat-form-field [color]="email && email.valid && 'accent'">
+            <input 
+                matInput
+                formControlName="email"
+                type="email"
+                placeholder="Email"
+                autocomplete="off"
+            />
+
+            <mat-error *ngIf="email && email.invalid && email.dirty">
+                Please enter a valid email adddress or try signup by google account.
+            </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field [color]="email && email.valid && 'accent'"  *ngIf="!isResetType">
+            
+            <input 
+                matInput
+                formControlName="password"
+                type="password"
+                placeholder="Password"
+                autocomplete="off"
+            />
+
+            <mat-error *ngIf="password && password.invalid && password.dirty">
+                Password length should be greater than 6
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field *ngIf="isSignupType"
+            [color]="passwordDoesMatchToConfirmPassword ? 'accent' : 'warn'"
+        >
+            <input 
+                matInput
+                formControlName="confirmPassword"
+                type="confirmPassword"
+                placeholder="Confirm Password"
+                autocomplete="off"
+            />
+
+            <mat-error *ngIf="confirmPassword && !passwordDoesMatchToConfirmPassword && confirmPassword.dirty">
+                Password does not match
+            </mat-error>
+        </mat-form-field>
+
+        <mat-error class="server-error"> {{serverMessage}} </mat-error>
+        
+        <button 
+            *ngIf="isResetType"
+            mat-stroked-button
+            type="submit"
+            [disabled]="loading">
+            Send Reset Email
+        </button>
+
+        <button
+            *ngIf="!isResetType"
+            mat-raised-button
+            colot="accent"
+            type="submit"
+            [disabled]="form.invalid || !passwordDoesMatchToConfirmPassword || loading">
+            Submit
+        </button>
+
+
+    </form>
+
+    <button mat-button
+        *ngIf="isLoginType && !isResetType"
+        (click)="changeTypeOfForm('reset')"
+    >
+        Forgot Password?
+    </button>
+
+</mat-card>
