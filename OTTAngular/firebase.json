@@ -1,7 +1,7 @@
 {
   "hosting": {
     "target": "OTTAngular",
-    "public": "/dist/ottangular",
+    "public": "dist/ottangular",
     "ignore": [
       "**/.*"
     ],
