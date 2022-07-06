@@ -28,6 +28,7 @@ export class UserService {
         console.log('adding to favourite', movie.id, user.email);
       } else {
         console.log('PLEASE LOGIN - not adding to favourite');
+        this.router.navigate(['/user'])
       }
     })
   }

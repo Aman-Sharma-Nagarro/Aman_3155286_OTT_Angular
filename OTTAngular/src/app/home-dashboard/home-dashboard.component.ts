@@ -34,7 +34,8 @@ export class HomeDashboardComponent implements OnInit {
       if (user){
         console.log('adding to Watch Later', movie.id, user.email);
       } else {
-        console.log('PLEASE LOGIN - adding to Watch Later', movie.id);
+        console.log('PLEASE LOGIN - NOT adding to Watch Later', movie.id);
+        this.router.navigate(['/user'])
       }
     })
   }
@@ -44,8 +45,8 @@ export class HomeDashboardComponent implements OnInit {
       if (user){
         console.log('adding to Watched', movie.id, user.email);
       } else {
-        console.log('PLEASE LOGIN - adding to Watched', movie.id);
-
+        console.log('PLEASE LOGIN - NOT adding to Watched', movie.id);
+        this.router.navigate(['/user'])
       }
     })
   }
