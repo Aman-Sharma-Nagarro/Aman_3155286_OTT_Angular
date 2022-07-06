@@ -10,11 +10,13 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from 'src/environments/environment';
+import { PrimeMemberComponent } from './prime-member/prime-member.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeDashboardComponent
+    HomeDashboardComponent,
+    PrimeMemberComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,72 @@
+<mat-card>
+
+    <form [formGroup]="contentForm" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+            <input 
+                matInput
+                formControlName="name"
+                placeholder="Name"
+                autocomplete="off"
+            />
+        </mat-form-field>
+
+        <mat-form-field>
+            <input 
+                matInput
+                formControlName="type"
+                placeholder="Type (movie / web-series)"
+                autocomplete="off"
+            />
+        </mat-form-field>
+        <mat-form-field>
+            <input 
+                matInput
+                formControlName="title"
+                placeholder="Title"
+                autocomplete="off"
+            />
+        </mat-form-field>
+        <mat-form-field>
+            <input 
+                matInput
+                formControlName="description"
+                placeholder="Description"
+                autocomplete="off"
+            />
+        </mat-form-field>
+        <mat-form-field>
+            <input 
+                matInput
+                formControlName="language"
+                placeholder="Language"
+                autocomplete="off"
+            />
+        </mat-form-field>
+
+        <mat-form-field>
+            <input 
+                matInput
+                formControlName="genere"
+                placeholder="Genere"
+                autocomplete="off"
+            />
+        </mat-form-field>
+        <mat-form-field>
+            <input 
+                matInput
+                formControlName="imdb"
+                placeholder="IMDB Rating"
+                autocomplete="off"
+            />
+        </mat-form-field>
+
+        <button
+            mat-raised-button
+            colot="accent"
+            type="submit">
+            Submit
+        </button>
+
+    </form>
+
+</mat-card>

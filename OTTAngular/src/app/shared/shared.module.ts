@@ -15,6 +15,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ShellComponent } from './shell/shell.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatOptionModule } from '@angular/material/core';
 
 const components = [ShellComponent];
 
@@ -31,7 +36,13 @@ const modules = [MatButtonModule,
   MatFormFieldModule,
   MatInputModule,
   MatSnackBarModule,
-  RouterModule
+  RouterModule,
+  ReactiveFormsModule,
+  MatGridListModule,
+  MatExpansionModule,
+  MatDialogModule,
+  MatOptionModule,
+  FormsModule
 ];
 
 @NgModule({

@@ -3,7 +3,6 @@ import {
   FormBuilder,
   FormControl,
   FormGroup,
-  Validator,
   Validators
 } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
@@ -17,7 +16,7 @@ export class EmailBasedLoginComponent implements OnInit {
 
   form = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.maxLength(6), Validators.required]),
+    password: new FormControl('', [Validators.minLength(6), Validators.required]),
     confirmPassword:  new FormControl('', [])
   });
 

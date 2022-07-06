@@ -1,0 +1,14 @@
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 24px;
+}
+
+.movie-catalog{
+    top: 50px;
+    position: relative;
+}

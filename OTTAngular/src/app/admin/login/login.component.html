@@ -1,0 +1,46 @@
+<mat-card>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field [color]="email && email.valid && 'accent'">
+            <input 
+                matInput
+                formControlName="email"
+                type="email"
+                placeholder="Email"
+                autocomplete="off"
+            />
+
+            <mat-error *ngIf="email && email.invalid && email.dirty">
+                Please enter a valid email adddress or try signup by google account.
+            </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field [color]="email && email.valid && 'accent'">
+            
+            <input 
+                matInput
+                formControlName="password"
+                type="password"
+                placeholder="Password"
+                autocomplete="off"
+            />
+
+            <mat-error *ngIf="password && password.invalid && password.dirty">
+                Password length should be greater than 6
+            </mat-error>
+        </mat-form-field>
+
+        <mat-error class="server-error"> {{serverMessage}} </mat-error>
+    
+        <button
+            mat-raised-button
+            colot="accent"
+            type="submit"
+            [disabled]="loginForm.invalid || loading">
+            Submit
+        </button>
+
+    </form>
+
+</mat-card>

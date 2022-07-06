@@ -7,19 +7,25 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { GoogleSigninDirective } from './google-signin.directive';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EmailBasedLoginComponent } from './email-based-login/email-based-login.component';
+import { FavouriteComponent } from './favourite/favourite.component';
+import { WatchedComponent } from './watched/watched.component';
+import { WatchLaterComponent } from './watch-later/watch-later.component';
 
 
 @NgModule({
   declarations: [
     LoginPageComponent,
     GoogleSigninDirective,
-    EmailBasedLoginComponent
+    EmailBasedLoginComponent,
+    FavouriteComponent,
+    WatchedComponent,
+    WatchLaterComponent
   ],
   imports: [
     CommonModule,
     UserRoutingModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ]
 })
 export class UserModule { }
